@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,                  // Allows JavaScript files in the project
+    "skipLibCheck": true,              // Skip type checking of declaration files
+    "strict": true,                    // Enable all strict type-checking options
+    "noEmit": true,                    // Do not emit output files (useful for Next.js)
+    "esModuleInterop": true,           // Ensure compatibility with CommonJS modules
+    "module": "esnext",                // Use ES module syntax
+    "moduleResolution": "bundler",     // Resolves modules the way bundlers like Webpack do
+    "resolveJsonModule": true,         // Allow importing JSON files as modules
+    "isolatedModules": true,           // Ensure each file can be safely transpiled independently
+    "jsx": "preserve",                 // Keep JSX syntax in the output (handled by Next.js)
+    "incremental": true,               // Enable incremental compilation (improves build times)
+    "plugins": [
+      {
+        "name": "next"                 // Enable Next.js plugin for TypeScript
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]               // Allows using @/ for importing from src/ directory
+    }
+  },
+  "include": [
+    "next-env.d.ts",                   // Next.js types (generated automatically)
+    "**/*.ts",                          // Include all .ts files
+    "**/*.tsx",                         // Include all .tsx files
+    ".next/types/**/*.ts"              // Include Next.js internal types
+  ],
+  "exclude": [
+    "node_modules"                     // Exclude node_modules folder from type checking
+  ]
+}
